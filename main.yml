@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # 单次部署的工作描述
+  # 单次部署的工作描述 test
   deploy:
     environment:
       name: github-pages
