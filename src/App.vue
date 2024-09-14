@@ -1,5 +1,5 @@
 <template>
-  <div>嘻嘻嘻</div>
+  <button @click="downloadAndExtractGeoLite2Country">嘻嘻嘻</button>
 </template>
 
 <script setup>
@@ -46,6 +46,4 @@ const downloadAndExtractGeoLite2Country = async () => {
     alert('下载 GeoLite2-Country 数据库时出错: ' + error.response.statusText)
   }
 }
-
-downloadAndExtractGeoLite2Country()
 </script>
