@@ -87,7 +87,7 @@ pr:
 p:
   &a1 {
     type: http,
-    interval: 86400,
+    interval: 3600,
     health-check:
       {
         enable: true,
@@ -101,12 +101,12 @@ auto:
     lazy: true,
     url: http://www.gstatic.com/generate_204,
     interval: 900,
-    use: [SSRDOG, CreamData, 狗狗加速],
+    use: [SSRDOG, CreamData, 狗狗加速, YToo],
   }
-use: &a2 { type: select, use: [SSRDOG, CreamData, 狗狗加速] }
-c: &a6 { type: http, behavior: classical, interval: 86400 }
-d: &a5 { type: http, behavior: domain, interval: 86400 }
-i: &a7 { type: http, behavior: ipcidr, interval: 86400 }
+use: &a2 { type: select, use: [SSRDOG, CreamData, 狗狗加速, YToo] }
+c: &a6 { type: http, behavior: classical, interval: 3600 }
+d: &a5 { type: http, behavior: domain, interval: 3600 }
+i: &a7 { type: http, behavior: ipcidr, interval: 3600 }
 
 proxy-providers:
   SSRDOG:
@@ -123,6 +123,11 @@ proxy-providers:
     <<: *a1
     url: https://DvDeVR.doggygo.top:8443/api/v1/client/e8921ea0ed27e70038940f3b96d6e299?flag=clashmeta
     path: ./proxy_providers/subscribe3.yaml
+
+  YToo:
+    <<: *a1
+    url: https://api.stentvessel.top/sub?target=clash&clash.doh=true&emoji=true&scv=true&udp=true&new_name=true&filename=YToo_Trojan&url=https%3A%2F%2Fapi.ytoo.xyz%2Fosubscribe.php%3Fsid%3D74490%26token%3Dc7jQce6QqXoQ
+    path: ./proxy_providers/subscribe4.yaml
 
 proxies: []
 proxy-groups:
@@ -141,6 +146,11 @@ proxy-groups:
     type: select
     use: [狗狗加速]
 
+  # YToo 节点组
+  - name: YToo
+    type: select
+    use: [YToo]
+
   # 手动切换组
   - name: 🚀 手动切换
     type: select
@@ -148,6 +158,7 @@ proxy-groups:
       - SSRDOG
       - CreamData
       - 狗狗加速
+      - YToo
       - ♻️ 自动选择
       - 🇭🇰 香港节点
       - 🇯🇵 日本节点
@@ -230,7 +241,6 @@ proxy-groups:
   - { name: 🇲🇽 墨西哥节点, <<: *a4, filter: "墨西哥|MX|(?i)Mexico" }
   - { name: 🇪🇸 西班牙节点, <<: *a4, filter: "西班牙|ES|(?i)Spain" }
   - { name: 🇦🇪 迪拜节点, <<: *a4, filter: "迪拜|AE|(?i)Dubai" }
-
 
 # 分流规则
 rule-providers:
