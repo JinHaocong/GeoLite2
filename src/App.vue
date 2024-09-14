@@ -9,7 +9,7 @@ import { Buffer } from 'buffer'
 
 const downloadAndExtractGeoLite2Country = async () => {
   try {
-    const url = `/https://download.maxmind.com/geoip/databases/GeoLite2-Country/download?suffix=tar.gz`
+    const url = `https://download.maxmind.com/geoip/databases/GeoLite2-Country/download?suffix=tar.gz`
 
     // 阻止 Axios 进行重定向
     const response = await Axios.get(url, {
