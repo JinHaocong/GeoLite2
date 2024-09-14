@@ -35,6 +35,10 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
+      - name: clean
+        run: |
+          rm -rf node_modules
+          rm yarn.lock
       - name: Install dependencies
         run: npm install
       - name: Build
