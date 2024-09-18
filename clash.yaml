@@ -111,7 +111,7 @@ i: &a7 { type: http, behavior: ipcidr, interval: 3600 }
 proxy-providers:
   SSRDOG:
     <<: *a1
-    url: https://coco.api-baobaog.rest/api/v1/client/subscribe?token=da957f30f95dfebcfd2af0039a7b2896
+    url: https://eoeo.dogss-host.store/s?t=da957f30f95dfebcfd2af0039a7b2896
     path: ./proxy_providers/subscribe1.yaml
 
   CreamData:
