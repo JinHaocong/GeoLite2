@@ -254,7 +254,7 @@ rule-providers:
   Ad:
     {
       <<: *a5,
-      url: https://anti-ad.net/clash.yaml,
+      url: https://ghp.ci/https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt,
       path: ./ruleset/anti-ad-clash.yaml,
     }
   OpenAi:
