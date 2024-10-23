@@ -121,7 +121,7 @@ proxy-providers:
 
   YToo:
     <<: *a1
-    url: https://api.stentvessel.top/sub?target=clash&clash.doh=true&emoji=true&scv=true&udp=true&new_name=true&filename=YToo_Trojan&url=https%3A%2F%2Fapi.ytoo.xyz%2Fosubscribe.php%3Fsid%3D74490%26token%3Dc7jQce6QqXoQ
+    url: https://api.stentvessel.top/sub?target=clash&clash.doh=true&emoji=true&scv=true&udp=true&new_name=true&filename=YToo_Trojan&url=https%3A%2F%2Fapi.ytoo.xyz%2Fosubscribe.php%3Fsid%3D78783%26token%3DZLlNDKkfG0wU
     path: ./proxy_providers/subscribe4.yaml
 
 proxies: []
