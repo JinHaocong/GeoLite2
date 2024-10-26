@@ -183,6 +183,7 @@ proxy-groups:
 
   #分流分组
   - { name: 🌏 全球加速, <<: *a3 }
+  - { name: 🛸 pikpak, <<: *a3 }
   - { name: 🍎 苹果服务, <<: *a3 }
   - { name: 📺 哔哩哔哩, <<: *a3 }
   - {
@@ -338,6 +339,8 @@ rule-providers:
 
   # 分流Policy
 rules:
+  - IP-CIDR,8.219.220.18/32,🛸 pikpak
+  - DOMAIN-KEYWORD,pikpak,🛸 pikpak
   - RULE-SET,Direct,DIRECT
   - RULE-SET,Lan,DIRECT
   - RULE-SET,Download,DIRECT
