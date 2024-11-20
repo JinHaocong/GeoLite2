@@ -101,9 +101,9 @@ auto:
     lazy: true,
     url: http://www.gstatic.com/generate_204,
     interval: 900,
-    use: [SSRDOG, CreamData, YToo],
+    use: [SSRDOG, FATCAT],
   }
-use: &a2 { type: select, use: [SSRDOG, CreamData, YToo] }
+use: &a2 { type: select, use: [SSRDOG, FATCAT] }
 c: &a6 { type: http, behavior: classical, interval: 3600 }
 d: &a5 { type: http, behavior: domain, interval: 3600 }
 i: &a7 { type: http, behavior: ipcidr, interval: 3600 }
@@ -114,15 +114,10 @@ proxy-providers:
     url: https://no1-svip.api-baobaog.rest/s?t=da957f30f95dfebcfd2af0039a7b2896
     path: ./proxy_providers/subscribe1.yaml
 
-  CreamData:
+  FATCAT:
     <<: *a1
-    url: https://sub.nysubs.xyz/Config/ClashConfig?u=932ca816-aafc-438d-b30f-e77db96c7de1&t=trojan
+    url: https://fcsblka.fcsubcn.cc:2096/api/v1/client/subscribe?token=b5150dce44b70599b1a3b54909488a8a
     path: ./proxy_providers/subscribe2.yaml
-
-  YToo:
-    <<: *a1
-    url: https://api.stentvessel.top/sub?target=clash&clash.doh=true&emoji=true&scv=true&udp=true&new_name=true&filename=YToo_Trojan&url=https%3A%2F%2Fapi.ytoo.xyz%2Fosubscribe.php%3Fsid%3D78783%26token%3DZLlNDKkfG0wU
-    path: ./proxy_providers/subscribe4.yaml
 
 proxies: []
 proxy-groups:
@@ -131,23 +126,17 @@ proxy-groups:
     type: select
     use: [SSRDOG]
 
-  # CreamData 节点组
-  - name: CreamData
+  # FATCAT 节点组
+  - name: FATCAT
     type: select
-    use: [CreamData]
-
-  # YToo 节点组
-  - name: YToo
-    type: select
-    use: [YToo]
+    use: [FATCAT]
 
   # 手动切换组
   - name: 🚀 手动切换
     type: select
     proxies:
       - SSRDOG
-      - CreamData
-      - YToo
+      - FATCAT
       - ♻️ 自动选择
       - 🇭🇰 香港节点
       - 🇯🇵 日本节点
