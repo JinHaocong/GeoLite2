@@ -101,9 +101,9 @@ auto:
     lazy: true,
     url: http://www.gstatic.com/generate_204,
     interval: 900,
-    use: [SSRDOG, FATCAT],
+    use: [SSRDOG, FATCAT, SS-ID, NaiU],
   }
-use: &a2 { type: select, use: [SSRDOG, FATCAT] }
+use: &a2 { type: select, use: [SSRDOG, FATCAT, SS-ID, NaiU] }
 c: &a6 { type: http, behavior: classical, interval: 3600 }
 d: &a5 { type: http, behavior: domain, interval: 3600 }
 i: &a7 { type: http, behavior: ipcidr, interval: 3600 }
@@ -111,13 +111,23 @@ i: &a7 { type: http, behavior: ipcidr, interval: 3600 }
 proxy-providers:
   SSRDOG:
     <<: *a1
-    url: https://no1-svip.api-baobaog.rest/s?t=da957f30f95dfebcfd2af0039a7b2896
+    url: https://no1-svip.urlapi-dodo.me/s?t=da957f30f95dfebcfd2af0039a7b2896
     path: ./proxy_providers/subscribe1.yaml
 
   FATCAT:
     <<: *a1
     url: https://fcsblka.fcsubcn.cc:2096/api/v1/client/subscribe?token=b5150dce44b70599b1a3b54909488a8a
     path: ./proxy_providers/subscribe2.yaml
+
+  SS-ID:
+    <<: *a1
+    url: https://sub.dggs.org/api/v1/client/subscribe?token=8f2842627be8084c0dd7a4e7cd56956f
+    path: ./proxy_providers/subscribe3.yaml
+
+  NaiU:
+    <<: *a1
+    url: https://times1732099766.subtangniu.top:9606/v2b/naiu/api/v1/client/subscribe?token=e84a0c85aa59b557694cd5c49d9291cf
+    path: ./proxy_providers/subscribe4.yaml
 
 proxies: []
 proxy-groups:
@@ -131,12 +141,24 @@ proxy-groups:
     type: select
     use: [FATCAT]
 
+  # SS-ID 节点组
+  - name: SS-ID
+    type: select
+    use: [SS-ID]
+
+  # NaiU 节点组
+  - name: NaiU
+    type: select
+    use: [NaiU]
+
   # 手动切换组
   - name: 🚀 手动切换
     type: select
     proxies:
       - SSRDOG
       - FATCAT
+      - SS-ID
+      - NaiU
       - ♻️ 自动选择
       - 🇭🇰 香港节点
       - 🇯🇵 日本节点
