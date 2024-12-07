@@ -180,6 +180,11 @@ proxy-groups:
       type: select,
       proxies: [🇺🇲 美国节点, 🇬🇧 英国节点, 🚀 手动切换],
     }
+  - {
+      name: 🛸 Claude,
+      type: select,
+      proxies: [🇺🇲 美国节点, 🇬🇧 英国节点, 🚀 手动切换],
+    }
   - { name: 🎬 国际媒体, <<: *a3 }
   - { name: 🌌 谷歌服务, <<: *a3 }
   - { name: 📟 电报消息, <<: *a3 }
@@ -252,6 +257,12 @@ rule-providers:
       <<: *a6,
       url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml,
       path: ./ruleset/OpenAi.yaml,
+    }
+  Claude:
+    {
+      <<: *a6,
+      url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Claude/Claude.yaml,
+      path: ./ruleset/Claude.yaml,
     }
   BiliBili:
     {
@@ -335,6 +346,7 @@ rules:
   - RULE-SET,Download,DIRECT
   - RULE-SET,Ad,🆎 AdBlock
   - RULE-SET,OpenAi,🤖 OpenAi
+  - RULE-SET,Claude,🛸 Claude
   - RULE-SET,BiliBili,📺 哔哩哔哩
   - RULE-SET,Bahamut,📺 哔哩哔哩
   - RULE-SET,GlobalMedia,🎬 国际媒体
