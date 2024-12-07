@@ -52,6 +52,7 @@ pr:
         ♻️ 自动选择,
         🚀 手动切换,
         🇭🇰 香港节点,
+        🇨🇳 台湾节点,
         🇯🇵 日本节点,
         🇰🇷 韩国节点,
         🇺🇲 美国节点,
@@ -59,28 +60,16 @@ pr:
         🇬🇧 英国节点,
         🇫🇷 法国节点,
         🇳🇱 荷兰节点,
-        🇨🇳 台湾节点,
         🇸🇬 新加坡节点,
         🇨🇦 加拿大节点,
-        🇮🇩 印度尼西亚节点,
         🇻🇳 越南节点,
-        🇦🇺 澳大利亚节点,
         🇮🇳 印度节点,
         🇷🇺 俄罗斯节点,
-        🇺🇦 乌克兰节点,
         🇹🇷 土耳其节点,
-        🇳🇴 挪威节点,
-        🇨🇭 瑞士节点,
-        🇸🇪 瑞典节点,
         🇮🇪 爱尔兰节点,
         🇲🇾 马来西亚节点,
         🇹🇭 泰国节点,
-        🇮🇱 以色列节点,
-        🇧🇷 巴西节点,
-        🇨🇱 智利节点,
-        🇲🇽 墨西哥节点,
-        🇪🇸 西班牙节点,
-        🇦🇪 迪拜节点,
+        🇿🇦 南非节点,
         DIRECT,
       ],
   }
@@ -139,6 +128,7 @@ proxy-groups:
       - XX-AI
       - ♻️ 自动选择
       - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🇺🇲 美国节点
@@ -146,28 +136,16 @@ proxy-groups:
       - 🇬🇧 英国节点
       - 🇫🇷 法国节点
       - 🇳🇱 荷兰节点
-      - 🇨🇳 台湾节点
       - 🇸🇬 新加坡节点
       - 🇨🇦 加拿大节点
-      - 🇮🇩 印度尼西亚节点
       - 🇻🇳 越南节点
-      - 🇦🇺 澳大利亚节点
       - 🇮🇳 印度节点
       - 🇷🇺 俄罗斯节点
-      - 🇺🇦 乌克兰节点
       - 🇹🇷 土耳其节点
-      - 🇳🇴 挪威节点
-      - 🇨🇭 瑞士节点
-      - 🇸🇪 瑞典节点
       - 🇮🇪 爱尔兰节点
       - 🇲🇾 马来西亚节点
       - 🇹🇭 泰国节点
-      - 🇮🇱 以色列节点
-      - 🇧🇷 巴西节点
-      - 🇨🇱 智利节点
-      - 🇲🇽 墨西哥节点
-      - 🇪🇸 西班牙节点
-      - 🇦🇪 迪拜节点
+      - 🇿🇦 南非节点
       - DIRECT
 
   #分流分组
@@ -196,9 +174,9 @@ proxy-groups:
   #节点分组
   - { name: ♻️ 自动选择, <<: *a4 }
   - { name: 🇭🇰 香港节点, <<: *a4, filter: "港|HK|(?i)Hong" }
+  - { name: 🇨🇳 台湾节点, <<: *a4, filter: "台|湾|TW|(?i)Taiwan" }
   - { name: 🇯🇵 日本节点, <<: *a4, filter: "日|东京|JP|(?i)Japan" }
   - { name: 🇰🇷 韩国节点, <<: *a4, filter: "韩|KR|(?i)Korea" }
-  - { name: 🇨🇳 台湾节点, <<: *a4, filter: "台|湾|TW|(?i)Taiwan" }
   - { name: 🇺🇲 美国节点, <<: *a4, filter: "美|US|(?i)States|American" }
   - { name: 🇩🇪 德国节点, <<: *a4, filter: "德|DE|(?i)Germany" }
   - { name: 🇬🇧 英国节点, <<: *a4, filter: "英|UK|(?i)Kingdom|Britain" }
@@ -206,25 +184,14 @@ proxy-groups:
   - { name: 🇳🇱 荷兰节点, <<: *a4, filter: "荷|NL|(?i)Netherlands" }
   - { name: 🇸🇬 新加坡节点, <<: *a4, filter: "坡|SG|(?i)Singapore" }
   - { name: 🇨🇦 加拿大节点, <<: *a4, filter: "拿|CA|(?i)Canada" }
-  - { name: 🇮🇩 印度尼西亚节点, <<: *a4, filter: "尼|ID|(?i)Indonesia" }
   - { name: 🇻🇳 越南节点, <<: *a4, filter: "越|VN|(?i)Vietnam" }
-  - { name: 🇦🇺 澳大利亚节点, <<: *a4, filter: "澳|AU|(?i)Australia" }
   - { name: 🇮🇳 印度节点, <<: *a4, filter: "(印度|IN|(?i)India)(?!尼西亚)" }
   - { name: 🇷🇺 俄罗斯节点, <<: *a4, filter: "俄|RU|(?i)Russia" }
-  - { name: 🇺🇦 乌克兰节点, <<: *a4, filter: "克|UA|(?i)Ukraine" }
   - { name: 🇹🇷 土耳其节点, <<: *a4, filter: "土|TR|(?i)Turkey" }
-  - { name: 🇳🇴 挪威节点, <<: *a4, filter: "挪|NO|(?i)Norway" }
-  - { name: 🇨🇭 瑞士节点, <<: *a4, filter: "士|CH|(?i)Switzerland" }
-  - { name: 🇸🇪 瑞典节点, <<: *a4, filter: "典|SE|(?i)Sweden" }
   - { name: 🇮🇪 爱尔兰节点, <<: *a4, filter: "爱|IE|(?i)Ireland" }
   - { name: 🇲🇾 马来西亚节点, <<: *a4, filter: "马来西亚|MY|(?i)Malaysia" }
   - { name: 🇹🇭 泰国节点, <<: *a4, filter: "泰国|TH|(?i)Thailand" }
-  - { name: 🇮🇱 以色列节点, <<: *a4, filter: "以色列|IL|(?i)Israel" }
-  - { name: 🇧🇷 巴西节点, <<: *a4, filter: "巴西|BR|(?i)Brazil" }
-  - { name: 🇨🇱 智利节点, <<: *a4, filter: "智利|CL|(?i)Chile" }
-  - { name: 🇲🇽 墨西哥节点, <<: *a4, filter: "墨西哥|MX|(?i)Mexico" }
-  - { name: 🇪🇸 西班牙节点, <<: *a4, filter: "西班牙|ES|(?i)Spain" }
-  - { name: 🇦🇪 迪拜节点, <<: *a4, filter: "迪拜|AE|(?i)Dubai" }
+  - { name: 🇿🇦 南非节点, <<: *a4, filter: "南非|ZA|(?i)South Africa" }
 
 # 分流规则
 rule-providers:
